@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Philippe Cheype</title>
+	<link rel="stylesheet" href="resources/css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+
+	<script>
+		function menu()
+		{
+			document.getElementById('popup-menu').style.visibility = "visible";
+		}
+
+		function menuLeave()
+		{
+			var menu = document.getElementById('popup-menu')
+			var menuChilds = document.getElementById('popup-menu').getElementsByTagName('a')
+
+			menu.addEventListener('mouseenter', function(){
+				menu.style.visibility = "visible";
+			});
+			menu.addEventListener('mouseout', function() {
+				menu.style.visibility = "collapse";
+			});
+
+			menuChilds.addEventListener('mouseenter', function(){
+				menu.style.visibility = "visible";
+			});
+			/*menuChilds.addEventListener('mouseout', function() {
+				menu.style.visibility = "visible";
+			});*/
+			document.getElementById('popup-menu').style.visibility = "collapse";
+		}
+
+	</script>
+</head>
+<body>
+	<div id="entier">
+		<div id="gauche">
+			<!-- Menu -->
+			<img  id="menu" src="resources/images/menu.png" onmouseover="menu();" onmouseleave="menuLeave()"/>
+		</div>
+
+		<div id="popmenu">
+			<div id="popup-menu">
+				<a href="#tete">^</a>
+				<a href="#tp">TP</a>
+			</div>
+		</div>
+
+		<div id="milieu">
+			<div id="tete">
+				<span>Philippe Cheype</span>
+			</div>
+			<hr id="no-indent"/>
+
+			<div id="desc">
+				<!-- Description -->
+				<span class="texte">Ceci est mon premier projet scolaire en classe d'ISN (année de Terminale), le projet consiste à créer un site personnel en trois semaines, composé de trois pages web, les trois semaines se sont déjà écoulées, mais je continue d'entretenir ce site avec les TP effectués et des nouvelles versions qui me permettent de m'entrainer.
+				<br>
+				Je suis un étudiant au Lycée du Parc Impérial en Terminale S spécialité Informatique et Sciences Numériques, j'ai toujours été intéréssé par le développement web et la programmation.</span>
+				<div id="web">
+					<!-- Anciennes versions -->
+					<span class="texte">Voici les projets sur lesquels j'ai travaillé depuis le début de l'année :</span>
+					<div id="v1">
+						<span class="sites">Version 1.0 - Projet Initial d'ISN</span>
+						<a href="../v1/index.html"><img class="sites_anciens" src="resources/images/v1.jpg"/></a>
+					</div>
+					<div id="v2">
+						<span class="sites">Version 2.0</span>
+						<a href="../v2/index.html"><img class="sites_anciens" src="resources/images/v2.jpg"/></a>
+					</div>
+					<span id="v3">
+						<span class="sites">Version 3.0</span>
+						<a href="#"><img class="sites_anciens" src="resources/images/v3.jpg"/></a>
+					</span>
+				</div>
+			</div>
+			<hr/>
+
+			<div id="tp">
+				<span class="texte">Voici la liste des TP et exercices:</span>
+				<a Href="../devoirs/TP1/tp1.html"><b>TP 1</b> - Le langage HTML et le style</a>
+				<a Href="../devoirs/TP2/tp2.html"><b>TP 2</b> - Interactions avec javascript</a>
+				<a Href="../devoirs/TP3/tp3.html"><b>TP 3</b> - Graphisme avec les images vectorielles</a>
+				<a Href="../devoirs/calc_ex1_ex2.html">Calculatrice // Fonc. carrée // Fonc. Inverse</a>
+				<a Href="../devoirs/punition_mult.html">Table de multiplication // Punition</a>
+				<a Href="../devoirs/boucles.html">Boucles</a>
+				<a Href="../devoirs/codes_caracteres/codes_caracteres.html">Codes caractères</a>
+				<a Href="../devoirs/TP4/tp4.html"><b>TP4</b> - Tableaux de nombres et images matricielles</a>
+				<a Href="../devoirs/TP6/tp6.html"><b>TP6</b> - Réaliser des animations</a>
+			</div>
+			<hr/>
+
+			<div id="savoir">
+				<!-- Connaisances Programmation
+				Langues et qualités -->
+				<span class="texte">J'ai un peu d'éxpérience en HTML/CSS je m'entraîne de temps en temps, très peu de connaisances en Javascript, c'est mon object d'ici la fin de l'année de le maitriser et finalement je m'y connais assez bien en Python.</span>
+			</div>
+			<hr/>
+
+			<div id="proj">
+				<!-- Futur Projet -->
+				<span class="texte">Je suis désormais pris dans une école d'informatique: Epitech</span>
+			</div>
+			<hr/>
+
+			<div id="contact">
+				<!-- Contact -->
+				<span class="texte">cheype.philippe@gmail.com</span>
+			</div>
+		</div>
+
+		<div id="footer-place">
+			<div id="droite"></div>
+			<footer>© 2019 <br> Philippe Cheype</footer>
+		</div>
+	</div>
+</body>
+</html>

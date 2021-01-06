@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		html, body {
+			background: #fffcfa;
+			font-family: sans-serif;
+		}
+
+		hr { margin: 2rem 0; }
+
+		.titre-maitre {
+			color: #C20103;
+			font-size: 2.5rem;
+			font-weight: bold;
+			text-align: center;
+			text-decoration: underline;
+		}
+
+		.titre {
+			color: #C20103;
+			font-size: 2rem;
+			font-weight: bold;
+			text-align: center;
+			text-decoration: underline;
+		}
+
+		.tp-lien {
+			color: #222;
+			font-size: 1rem;
+			text-align: center;
+			text-decoration: underline;
+		}
+
+		.noms {  text-align: right;  }
+
+		div {  text-align: center;  }
+
+		.espace {  margin-top: 1rem;  }
+
+/* ----- */
+		.gauche {  text-align: left;  }
+
+/* EXO 3 */
+		#cesar {  text-decoration: underline;  }
+	</style>
+	<script>
+/* EXO 1 */
+		function nextChar(c)
+		{
+			return String.fromCharCode(c.charCodeAt(0) + 1);
+		}
+
+		function majuscule()
+		{
+			var char = "@";
+			for (i = 0; i < 26; i++) {
+				console.log(nextChar(char));
+				var char = nextChar(char);
+			};
+		}
+
+		function minuscule()
+		{
+				var char = "`";
+				for (i = 0; i < 26; i++) {
+					console.log(nextChar(char));
+					var char = nextChar(char);
+				};
+		}
+
+/* EXO 2 */
+		function exo2()
+		{
+			var oui = document.getElementById('exo2').value;
+			var V = 0;
+			while (V < oui.length) {
+				console.log(V + 1 + " \"" + oui[V] + "\" " + oui[V].charCodeAt(0));
+				V = V + 1;
+			};
+		}
+
+/* EXO 3 */
+		function aieaieaie()
+		{
+			if (document.getElementById('aieaie').value == "Y") {
+				document.getElementById('aie').innerHTML = document.getElementById('aie').innerHTML + "A";
+
+			} else if (document.getElementById('aieaie').value == "Z") {
+				document.getElementById('aie').innerHTML = document.getElementById('aie').innerHTML + "B";
+
+			} else if (document.getElementById('aieaie').value == "y") {
+				document.getElementById('aie').innerHTML = document.getElementById('aie').innerHTML + "a";
+
+			} else if (document.getElementById('aieaie').value == "z") {
+				document.getElementById('aie').innerHTML = document.getElementById('aie').innerHTML + "b";
+
+			} else if (document.getElementById('aieaie').value == " ") {
+				document.getElementById('aie').innerHTML = document.getElementById('aie').innerHTML + " ";
+
+			} else {
+				document.getElementById('aie').innerHTML = document.getElementById('aie').innerHTML + nextChar(nextChar(document.getElementById('aieaie').value));
+			}
+
+			document.getElementById('aieaie').value = "";
+		}
+
+		function effacer()
+		{
+			document.getElementById('aie').innerHTML = "";
+		}
+	</script>
+</head>
+
+<body>
+	<div>
+		<div class="noms">
+			<span>ANTOINE Thomas// MERLET Pauline // CHEYPE Philippe</span>
+		</div>
+		<span class="titre-maitre">Le codage des caractères</span><br>
+
+		<a class="tp-lien" Href="NSI Le codage des caractères.pdf">Lien vers le sujet</a>
+
+	</div>
+<!-- ---- -->
+	<div class="espace">
+		<div class="gauche">
+			1) 95 caractères qui n'incluent pas les accents.
+			<br/>2) 191 au lieu de 95 et qui incluent les accents.
+			<br/>3) L'euro ne fait pas partie du code ISO/CEI 8859-1 car cela n'existait pas à <br/>l'époque de la création de ce code.
+			<br/>4) 41 en ISO/CEI 8859-1; #41 en hexadecimal; U+0041 en décimal.
+			<br/>5) Les caractères présents dans le code ASCII et dans le code ISO/CEI 8859-1 sont tout les caractères de 20 à 7F.
+			<br/>6) avec utf-8 on peut utiliser 1, 2 ou 4 octets alors qu'avec utf-32 on ne peut n'en utiliser que 4.
+			<br/>7) 2^16 x 17 = 1 114 112.
+			<br/>8) Le caractère correspondant à l'unicode 916 est "Δ".
+			<br/>9) l'unicode de l'idéogramme chinois qui signifie l'être humain est : "U+4EBA".
+			<br/>10) Le code décimal 89, 101, 115 est "Yes".
+			<br/>11) Le code UTF correspondant au texte "Parc" est 50, 61, 72, 63.
+			<br/>12) Le texte ci-dessous dans l'exo fais 1035 caractères.
+		</div>
+	</div>
+	<br>
+	<br>
+<!-- EXO 1 -->
+	<div>
+		<span class="titre">Exercice 1 - Alphabet majuscule ou minuscule.</span>
+		<div class="espace">
+	<span class="gauche">Dans console</span><br/>
+	<button onclick="majuscule()">ALPHABET EN MAJUSCULE</button><br/>
+	<button onclick="minuscule()">alphabet en minuscule</button>
+		</div>
+	</div>
+<!-- EXO 2 --> <hr/>
+	<div>
+		<span class="titre">Exercice 2 - Victor Hugo</span>
+		<div class="espace">
+			<textarea id="exo2">Voici que la saison décline, L’ombre grandit, l’azur décroît, Le vent fraîchit sur la colline, L’oiseau frissonne, l’herbe a froid. Août contre septembre lutte ; L’océan n’a plus d’alcyon ; Chaque jour perd une minute, Chaque aurore pleure un rayon. La mouche, comme prise au piège, Est immobile à mon plafond ; Et comme un blanc flocon de neige, Petit à petit, l’été fond. Victor Hugo, Dernière gerbe</textarea>
+			<br/><button onclick="console.log(document.getElementById('exo2').innerHTML.length);">Longueur</button>
+			<br/><button onclick="exo2()">Codes</button>
+			<br/><br/><span class="gauche">Le caractère espace correspond a code 32 et a pour abréviation U+0020.</span>
+			<br/><span class="gauche">Le caractère en position 28 correspond à une virgule et à pour abréviation U+002C.</span>
+			<br/><span class="gauche">Le caractère "," se trouve en position: 28, 45, 61, 94, 114, 218, 260, 282, 346, 361 et 386.</span>
+		</div>
+	</div>
+<!-- EXO 3 --> <hr/>
+	<div>
+		<span class="titre">Exercice 3 - Jules César</span>
+		<div class="espace">
+			<input id="aieaie" oninput="aieaieaie()"/><br/>
+			<span id="aie"></span><br/>
+			<button onclick="effacer()">Effacer</button><br/><br/><br/>
+			<img src="https://www.francetvinfo.fr/image/75inq8jfr-0a18/578/325/17401375.png"/><br/>
+			<span id="cesar">Lwngu Eguct</span><br/><br/>
+			<span>Quand on tape un message commencant par la lettre z ou Z, ou, y ou Y on obtient { pour la lettre y, [ pour la lettre Y, \ pour la lettre Z et | pour la lettre z.</span>
+		</div>
+	</div>
+</body>
+</html>

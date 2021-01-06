@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--
+	<link rel="stylesheet" href="[]"/>
+	<script src="[]"></script>
+	-->
+	<style>
+		html, body {
+			background: #fffcfa;
+			font-family: sans-serif;
+		}
+
+		hr { margin: 2rem 0; }
+
+		.titre-maitre {
+			font-weight: bold;
+			font-size: 2.5rem;
+			text-decoration: underline;
+			text-align: center;
+			color: #C20103;
+		}
+
+		.titre {
+			font-weight: bold;
+			font-size: 2rem;
+			text-align: center;
+			text-decoration: underline;
+			color: #C20103;
+		}
+
+		.tp-lien {
+			text-decoration: underline;
+			color: #222;
+			font-size: 1rem;
+			text-align: center;
+		}
+
+		.noms {  text-align: right;  }
+
+		div {  text-align:center;  }
+
+		.espace {  margin-top: 1rem;  }
+
+/* EXO 1 */
+		#explication {
+			text-align: left;
+			padding: 0 17.5%;
+		}
+
+		.rebours {
+			font-size: 2rem;
+			font-weight: bolder;
+			letter-spacing: 2px;
+			color: #580000;
+		}
+
+/* EXO 2 & 3*/
+		.briques {
+			background:#842e1b;
+			height:100px;
+			width: 800px;
+		}
+
+/* EXO 4 */
+		#briques_exo4 {
+			background:#842e1b;
+			height:115px;
+			width: 800px;
+		}
+
+/* EXO 5 */
+		.decor {
+			position:relative;
+			top: -130px;
+		}
+
+		.images {
+			position:absolute;
+			left:100px;
+			opacity: 0;
+			top: 1310px;
+		}
+	</style>
+	<script>
+/* EXO 1 */
+		var t = 0;
+		var valeur = true;
+
+		function compte_a_rebours()
+		{
+			if (valeur == true) {
+				valeur = false;
+				t = 60;
+				interval = setInterval("t--;   conteneur.innerHTML = t;   if (t <= 0) {  conteneur.innerHTML = 'Fin';   valeur = true;   clearInterval(interval);  }", 100);
+
+			}
+		}
+
+/* EXO 2 */
+		var x_exo2 = 10;
+
+		setInterval(function()
+		{
+			document.getElementById("tennis_exo2").style.left = x_exo2;
+			x_exo2++;
+
+		}, 50);
+			// 50 * 20 = 1000 millisecondes
+			// Donc 50 ms = 20 fois par seconde
+
+/* EXO 3 */
+		var x_exo3 = 10;
+		var sens = "gauche";
+
+		setInterval(function()
+		{
+			document.getElementById("tennis_exo3").style.left = x_exo3;
+
+			if (sens == "gauche") {
+				x_exo3++;
+			} else {
+				x_exo3--;
+			}
+
+			if (x_exo3 >= 750) {
+				sens = "droite";
+			} else if (x_exo3 <= 10) {
+				sens = "gauche";
+			}
+		}, 50);
+
+/* EXO 4 */
+		var x_exo4 = 10;
+		var y_exo4 = 970;
+		var sens_x = "gauche";
+		var sens_y = "bas";
+
+		setInterval(function()
+		{
+			document.getElementById("tennis_exo4").style.left = x_exo4;
+			document.getElementById("tennis_exo4").style.top = y_exo4;
+
+			if (sens_x == "gauche") {
+				x_exo4++;
+			} else {
+				x_exo4--;
+			}
+
+			if (sens_y == "bas") {
+				y_exo4++;
+			} else {
+				y_exo4--;
+			}
+
+			if (x_exo4 >= 750) {
+				sens_x = "droite";
+			} else if (x_exo4 <= 10) {
+				sens_x = "gauche";
+			}
+
+			if (y_exo4 >= 1030) {
+				sens_y = "haut";
+			} else if (y_exo4 <= 980) {
+				sens_y = "bas";
+			}
+		}, 50);
+
+/* EXO 5 */
+		var image = 0;
+		/*var decor_y = 100;*/
+		setInterval(function()
+		{
+			// ANIMATION CHEVAL //
+			for (i = 0; i < 8; i++) {
+				document.getElementById("i_" + i).style.opacity = 0;
+			}
+
+			document.getElementById("i_" + image).style.opacity = 1;
+			image++;
+			if (image >= 8) {  image = 0  }
+
+			// ANIMATION DECOR //
+			/*document.getElementById("pierre").style.left = decor_y;
+			decor_y--;*/
+		}, 90);
+	</script>
+</head>
+
+<body>
+	<div>
+		<span class="titre-maitre">TP6 - Réaliser des animations</span><br>
+		<a class="tp-lien" Href="TP6.pdf">Lien vers le sujet</a>
+
+		<div class="noms">
+			<span>MERLET Pauline</span><br>
+			<span>ANTOINE Thomas</span><br>
+			<span>CHEYPE Philippe</span>
+		</div>
+	</div>
+<!-- EXO 1 -->
+	<div>
+		<span class="titre">Exercice 1 - Un compte à rebours</span>
+		<div class="espace">
+			<div id="explication">
+				<b>"var t = 0; setInterval("t++;conteneur.innerHTML = t",100);"</b> <br><br>
+				<b>var t = 0;</b> ===> defini à t la valeur 0. <br>
+				<b>setInterval(" ",100);</b> ===> effectue des parametres données dans " ", 100 fois. <br>
+				<b>t++;</b> ===> incrémente t de 1. <br>
+				<b>conteneur.innerHTML = t</b> ===> trouve l'élement html avec l'id conteneur et change son contenu a la valeur de t.
+			</div><br>
+			<button class="rebours" onclick="compte_a_rebours()">Compte à rebours</button><br>
+			<span class="rebours" id="conteneur">60</span>
+		</div>
+	</div>
+<!-- EXO 2 --> <hr/>
+	<div>
+		<span class="titre">Exercice 2 - Balle en mouvement (gauche)</span>
+		<div class="briques">
+			<div class="espace">
+				<svg id="tennis_exo2" height="50" width="50" style="position:absolute; left:10px; top:525px">
+					<circle cx="25" cy="25" r="20" fill="yellow"  />
+				</svg>
+			</div>
+		</div>
+		<span>Quand la balle atteint le bord de l'écran elle continue.</span>
+	</div>
+<!-- EXO 3 --> <hr/>
+	<div>
+		<span class="titre">Exercice 3 - Balle en mouvement (horizontal)</span>
+		<div class="briques">
+			<div class="espace">
+				<svg id="tennis_exo3" height="50" width="50" style="position:absolute; left:10px; top:760px">
+					<circle cx="25" cy="25" r="20" fill="yellow"  />
+				</svg>
+			</div>
+		</div>
+	</div>
+<!-- EXO 4 --> <hr/>
+	<div>
+		<span class="titre">Exercice 3 - Balle en mouvement (horizontal & vertical)</span>
+		<div id="briques_exo4">
+			<div class="espace">
+				<svg id="tennis_exo4" height="50" width="50" style="position:absolute; left:10px; top:980px">
+					<circle cx="25" cy="25" r="20" fill="yellow"  />
+				</svg>
+			</div>
+		</div>
+	</div>
+<!-- EXO 5 --> <hr/>
+	<div>
+		<span class="titre">Exercice 5 - Animation cheval au galop</span>
+		<div id="exo5" class="espace">
+			<svg id="décor" height="300" width="100vw" style="background:lightblue;">
+				<rect width="100vw" height="90" y="210" style="fill:#f6d7b0;">
+				<embed id="pierre" class="decor" src="pierre.png" x="0" y="810" width="97" height="64">
+				<animate
+					xlink:href="#pierre"
+					attributeName="y"
+					from="810"
+					to="0"
+					dur="5s"
+					repeatCount="indefinite" />
+			</svg>
+
+			<img class="images" id="i_0" src="http://phychiinfo.free.fr/ISN/i/img_cheval/cheval_1.png">
+			<img class="images" id="i_1" src="http://phychiinfo.free.fr/ISN/i/img_cheval/cheval_2.png">
+			<img class="images" id="i_2" src="http://phychiinfo.free.fr/ISN/i/img_cheval/cheval_3.png">
+			<img class="images" id="i_3" src="http://phychiinfo.free.fr/ISN/i/img_cheval/cheval_4.png">
+			<img class="images" id="i_4" src="http://phychiinfo.free.fr/ISN/i/img_cheval/cheval_5.png">
+			<img class="images" id="i_5" src="http://phychiinfo.free.fr/ISN/i/img_cheval/cheval_6.png">
+			<img class="images" id="i_6" src="http://phychiinfo.free.fr/ISN/i/img_cheval/cheval_7.png">
+			<img class="images" id="i_7" src="http://phychiinfo.free.fr/ISN/i/img_cheval/cheval_8.png">
+		</div>
+		<span>Dans le paragraphe précédant, dans le tp, le cheval est vu du référenciel cheval, soit lui-même.</span>
+	</div>
+
+	<span class="titre-maitre" style="text-decoration:none;color:black;align:center;display:block;font-size:2rem">On es allé le plus loin possible (faire l'animation du cheval), on n'a donc pas reussi à animer le décor, que ce soit par nos connaisances ou toute documentation et information disponible sur internet les images svg ne veulent tout simplement pas s'animer elle vont d'un point A à un point B mais elle n'éffectuent pas le trajet entre ces deux points.</span>
+</body>
+</html>

@@ -1,0 +1,111 @@
+html, body {
+    color: white;
+    font: 1rem Arial, sans-serif;
+    margin:0;
+    padding:0;
+}
+
+body {
+    background-attachment: fixed;
+    background-color: #1f302b;
+    background-image: url(../ressources/background.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#temperature {  cursor: default;  }
+
+#main_page {
+    display:block;
+    font-family: 'Kanit', sans-serif;
+    height: 100vh;
+    position:sticky;
+    width:auto;
+}
+
+.side_grids {  height:100vh;  }
+
+#center_grid {
+    display:grid;
+    grid-template-columns: 1fr 765px 1fr;
+    position:relative;
+}
+
+.links {  font-size: 10rem;  }
+
+#link_grid {
+    background:rgba(202,202,202,0.125);
+    display:grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    height:80vh;
+    justify-items: center;
+    margin:10vh 0;
+    width:760px;
+}
+
+#atrium      {  color:#db791d;  }
+#pronote     {  color:#077031;  }
+#moodle      {  color:#b36114;  }
+#ISN         {  color:#ffb5c3;  }
+#youtube     {  color:#ff0000;  }
+#twitter     {  color:#00aee8;  }
+#instagram   {  color:#eb5baa;  }
+#mon_site    {  color:#ffffff;  }
+#cours       {  color:#7d7c7c;  }
+#gmail_priv  {  color:#de3131;  }
+#gmail_pro   {  color:#851515;  }
+#hotmail_pro {  color:#0173BC;  }
+
+.links:hover{
+    cursor: pointer;
+    filter:brightness(60%);
+}
+
+#temperature {
+    bottom: 1rem;
+    color: #6d918a;
+    filter: drop-shadow(0 0 1rem #6d918a);
+    font-size: 3rem;
+    position: absolute;
+    right: 1rem;
+}
+
+#time {
+    color: #6d918a;
+    filter: drop-shadow(0 0 0.45rem #6d918a);
+    font-size: 1.5rem;
+    left: 1rem;
+    position: absolute;
+    top: 1rem;
+}
+
+#date {
+    color: #6d918a;
+    filter: drop-shadow(0 0 0.4rem #6d918a);
+    font-size: 1rem;
+    left: 1rem;
+    position: absolute;
+    top: 2.5rem;
+}
+
+#content {
+    background: #0f1413;
+    border: solid 0.5rem #070a0a;
+    height: 100vh;
+    left:0;
+    width:auto;
+}
+
+#websites {
+    height:100vh;
+    position:relative;
+}
+
+#website {
+    height:100%;
+    position:absolute;
+    width:75%;
+}

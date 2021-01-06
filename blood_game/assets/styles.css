@@ -1,0 +1,82 @@
+html, body {
+	background-color: #d7e7ea;
+	margin: 0;
+	padding: 0;
+}
+
+#main_container {
+	background: #a9d5de;
+	border-radius: 1vh;
+	border: solid 0.5vh #8dbbd3;
+	display: block;
+	height: 85vh;
+	margin: 7.5vh 7.5vw;
+	position: absolute;
+	width: 85vw;
+}
+
+#health_bg {
+	background: yellow;
+	border-radius: 25vh;
+	border: solid 0.5vh gold;
+	display: block;
+	height: 3rem;
+	margin: 1rem;
+	position: absolute;
+	right: 0;
+	width: 3rem;
+}
+
+#low_health {
+	background: red;
+	border-radius: 25vh;
+	border: solid 0.5vh darkred;
+	display: block;
+	height: 3rem;
+	margin: 1rem;
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	width: 3rem;
+}
+
+#high_health {
+	background: green;
+	border-radius: 25vh;
+	border: solid 0.5vh darkgreen;
+	display: block;
+	height: 3rem;
+	margin: 1rem;
+	opacity: 1;
+	position: absolute;
+	right: 0;
+	width: 3rem;
+}
+
+#health_num {
+	display: block;
+	font-family: arial;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin: 1.8rem 1.25rem 0;
+	opacity: 0.5;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	width: 3rem;
+}
+
+#negatives > img {
+	cursor: pointer;
+	display: block;
+	height: 5rem;
+	image-rendering: crisp-edges;
+	margin: 1rem;
+	position: relative;
+	width: auto;
+}
+
+#negatives > img:hover {
+	height: 6rem;
+	position: relative;
+}

@@ -1,0 +1,11 @@
+E:\Documents\Visual Basic\Projects\Connection Tester1\bin\Debug\Connection Tester1.exe.config
+E:\Documents\Visual Basic\Projects\Connection Tester1\bin\Debug\Connection Tester1.exe
+E:\Documents\Visual Basic\Projects\Connection Tester1\bin\Debug\Connection Tester1.pdb
+E:\Documents\Visual Basic\Projects\Connection Tester1\bin\Debug\Connection Tester1.xml
+E:\Documents\Visual Basic\Projects\Connection Tester1\obj\Debug\Connection_Tester.Form1.resources
+E:\Documents\Visual Basic\Projects\Connection Tester1\obj\Debug\Connection_Tester.Resources.resources
+E:\Documents\Visual Basic\Projects\Connection Tester1\obj\Debug\Connection Tester1.vbproj.GenerateResource.Cache
+E:\Documents\Visual Basic\Projects\Connection Tester1\obj\Debug\Connection Tester1.exe
+E:\Documents\Visual Basic\Projects\Connection Tester1\obj\Debug\Connection Tester1.xml
+E:\Documents\Visual Basic\Projects\Connection Tester1\obj\Debug\Connection Tester1.pdb
+E:\Documents\Visual Basic\Projects\Connection Tester1\obj\Debug\Connection Tester1.vbproj.CoreCompileInputs.cache

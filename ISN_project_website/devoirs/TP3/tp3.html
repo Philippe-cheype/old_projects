@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		html, body {
+			background: #fffcfa;
+			font-family: sans-serif;
+		}
+
+		hr { margin: 2rem 0; }
+
+		.titre-maitre {
+			font-weight: bold;
+			font-size: 2.5rem;
+			text-decoration: underline;
+			text-align: center;
+			color: #C20103;
+		}
+
+		.titre {
+			font-weight: bold;
+			font-size: 2rem;
+			text-align: center;
+			text-decoration: underline;
+			color: #C20103;
+		}
+
+		.tp-lien {
+			text-decoration: underline;
+			color: #222;
+			font-size: 1rem;
+			text-align: center;
+		}
+
+		.noms {
+			text-align: right;
+		}
+
+		div {
+			text-align:center;
+		}
+
+		.espace {
+			margin-top: 1rem;
+		}
+
+/* EXO 1 */
+		#relou {
+			background-color: rgb(200,200,200);
+
+		}
+	</style>
+	<script>
+/* EXO 3 */
+		var i = 6;
+
+		function turn()
+		{
+			document.getElementById('rectangle').setAttribute('transform','rotate(' + i + ' 150,150)');
+			console.log(i);
+			i += 6;
+		}
+	</script>
+</head>
+
+<body>
+	<div>
+		<span class="titre-maitre">TP3 - Graphisme avec les images vectorielles</span><br>
+
+		<a class="tp-lien" Href="TP3.pdf">Lien vers le sujet</a>
+
+		<div class="noms">
+			<span>ANTOINE Thomas</span><br>
+			<span>CHEYPE Philippe</span>
+		</div>
+	</div>
+<!-- EXO 1 -->
+	<div>
+		<span class="titre">Exercice 1 - Drapeaux </span>
+		<div id="relou" class="espace">
+			<svg width=1000 height=300 viewBox="0 0 1000 300" >
+				<rect x=250 y=85 width=200 height=133 fill=white />
+				<circle cx=350 cy=153 r=40 fill=red />
+
+				<rect x=454 y=65 width=200 height=173.3333333 fill=black />
+				<rect x=521.66 y=65 width=66.66 height=173.3333333 fill=yellow />
+				<rect x=588.32 y=65 width=66.66 height=173.3333333 fill=red />
+
+				<rect x=658 y=100 width=200 height=112.5 fill=blue />
+				<rect x=715 y=100 width=30 height=112.5 fill=white />
+				<rect x=658 y=140 width=200 height=30 fill=white />
+				<rect x=720 y=100 width=20 height=112.5 fill=red />
+				<rect x=658 y=145 width=200 height=20 fill=red />
+			</svg>
+		</div>
+	</div>
+<!-- EXO 2 --> <hr/>
+	<div>
+		<span class="titre">Exercice 2 - Graphique </span>
+		<div class="espace">
+			<img src="ex2/tableau.png"/><br/>
+			<svg id="relou" width=300 height=300 viewBox="0 0 300 300">
+				<polygon points="30,90 90,30 150,60 210,30 270,90 150,240" fill=red />
+			</svg>
+		</div>
+	</div>
+<!-- EXO 3 --> <hr/>
+	<div>
+		<span class="titre">Exercice 3 - Tourne</span>
+		<div class="espace">
+			<svg id="relou" width=300 height=300 viewBox="0 0 300 300">
+				<circle cx=150 cy=150 r=100 stroke=black stroke-width=5 fill=white onclick="turn();"/>
+				<rect id="rectangle" x=150 y=142.5 width=100 height=15 fill=red id="rectangle" onclick="turn();"/>
+			</svg>
+		</div>
+	</div>
+</body>
+</html>

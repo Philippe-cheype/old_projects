@@ -1,0 +1,12 @@
+E:\Documents\Program projects\VB\Projects\Phone\Phone\bin\Debug\Phone.exe.config
+E:\Documents\Program projects\VB\Projects\Phone\Phone\bin\Debug\Phone.exe
+E:\Documents\Program projects\VB\Projects\Phone\Phone\bin\Debug\Phone.pdb
+E:\Documents\Program projects\VB\Projects\Phone\Phone\bin\Debug\Phone.xml
+E:\Documents\Program projects\VB\Projects\Phone\Phone\obj\Debug\Phone.vbprojAssemblyReference.cache
+E:\Documents\Program projects\VB\Projects\Phone\Phone\obj\Debug\Phone.Form1.resources
+E:\Documents\Program projects\VB\Projects\Phone\Phone\obj\Debug\Phone.Resources.resources
+E:\Documents\Program projects\VB\Projects\Phone\Phone\obj\Debug\Phone.vbproj.GenerateResource.cache
+E:\Documents\Program projects\VB\Projects\Phone\Phone\obj\Debug\Phone.vbproj.CoreCompileInputs.cache
+E:\Documents\Program projects\VB\Projects\Phone\Phone\obj\Debug\Phone.exe
+E:\Documents\Program projects\VB\Projects\Phone\Phone\obj\Debug\Phone.xml
+E:\Documents\Program projects\VB\Projects\Phone\Phone\obj\Debug\Phone.pdb

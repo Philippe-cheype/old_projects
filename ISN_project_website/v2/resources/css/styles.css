@@ -1,0 +1,240 @@
+::selection {
+	background-color: #000;
+	color: #fff;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #eee;
+	animation-fill-mode: forwards;
+	font-family: "Roboto", "Arial", sans-serif;
+}
+
+#entier {
+	position: relative;
+ 	min-height: 100%;
+}
+
+/* TETE DE PAGE */
+
+#tete {
+	position: relative;
+	width:100%;
+	font-family: "Open Sans", sans-serif;
+}
+
+.pages {
+	text-decoration: none;
+	padding: 0.4rem;
+	border: solid 0.3rem rgba(200,200,200, 0.05);
+    background: rgba(200,200,200,0.1);
+	top:50%;
+	transform: translate(0%, -50%);
+	font-size: 1.5rem;
+	color: #eee;
+	position: absolute;
+}
+
+#tete-barre {
+	background: rgba(0,0,0, 0.05);
+	position: absolute;
+	top:0;
+	height:4rem;
+	width:100%;
+}
+
+#tete > img {
+
+	height:auto;
+	width:100%;
+}
+
+#masque {
+	background: rgba(0,0,0,0.3);
+	position: absolute;
+	top:0;
+	height:100%;
+	width:100%;
+
+}
+
+#titre {
+	margin:0;
+	padding: 1rem;
+	border: solid 2vw rgba(200,200,200, 0.15);
+    background: rgba(200,200,200,0.3);
+	position: absolute;
+	text-align: center;
+	font-size: 5vw;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #eee;
+    font-family: 'Playfair Display', serif;
+}
+
+#accueil-menu {
+	left: 1rem;
+}
+
+#propos-menu {
+	right: 110px;
+}
+
+#autre-menu {
+	right: 1rem;
+}
+
+#tp-menu {
+	position: absolute;
+	padding: 0.10rem;
+	border: solid 0.3rem rgba(200,200,200, 0.2);
+    background: rgba(200,200,200,0.25);
+	color: #eee;
+	font-size: 2vw;
+	text-decoration: none;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@keyframes boutons {
+	from 0% {
+		color: #eee;
+		border: solid 0.3rem rgba(200,200,200, 0.05);
+    	background: rgba(200,200,200,0.1);
+	}
+	to {
+		color: #aaa;
+		border: solid 0.3rem rgba(200,200,200, 0.1);
+    	background: rgba(200,200,200,0.15);
+	}
+}
+
+@keyframes bouton-tp {
+	from 0% {
+		color: #eee;
+		border: solid 0.3rem rgba(200,200,200, 0.2);
+    	background: rgba(200,200,200,0.25);
+	}
+	to {
+		color: #aaa;
+		border: solid 0.3rem rgba(200,200,200, 0.25);
+    	background: rgba(200,200,200,0.3);
+	}
+}
+
+.pages:hover {
+	animation: boutons 0.4s;
+	animation-fill-mode: forwards;
+}
+
+#tp-menu:hover {
+	animation: bouton-tp 0.4s;
+	animation-fill-mode: forwards;
+}
+
+
+#gradiant {
+	object-fit: cover;
+	object-position: 0 100%;
+	transform: scaleY(-1);
+    height:2.5rem;
+	width:100%;
+	position:absolute;
+	margin:-15px 0 0;
+	mask-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
+	-webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
+	filter: brightness(60%);
+}
+
+/* PAGE */
+
+#page {
+	margin: 2rem 8rem 0;
+	text-align: justify;
+	overflow: auto;
+	padding-bottom: 11rem;
+}
+
+#page > p {
+	font-size:1.1rem;
+}
+
+/* BAS DE PAGE */
+
+#pied {
+	position: absolute;
+	background: #1D1717;
+  	width:100%;
+  	height: 10rem;
+	margin-top: -9.93rem;
+	clear: both;
+	font-family: "Open Sans", sans-serif;
+}
+
+#pied > span {
+	position: absolute;
+	width: 100%;
+	color: #555;
+	font-size: 1.1rem;
+	text-align: center;
+}
+
+/* TAILLES */
+
+@media (max-width: 725px) and (min-width: 441px) {
+	#page { margin: 2rem 4rem 0; }
+	#tp-menu { top: 75%; font-size: 2.5vw; }
+	#gradiant { margin:-10px 0 0; }
+}
+
+@media (max-width: 440px) and (min-width: 321px) {
+	#page { margin: 2rem 2rem 0; }
+	#tete-barre { height:2.75rem; }
+	#accueil-menu { left: 0.25rem; }
+	#propos-menu { right: 4.25rem; }
+	#autre-menu { right: 0.25rem; }
+	#tp-menu {
+		top: 80%;
+		font-size: 3vw;
+		border: solid 0.3rem rgba(200,200,200, 0.2);
+	}
+	.pages {
+		padding: 0.2rem;
+		font-size: 1rem;
+	}
+	#titre {
+		padding: 0.5rem;
+		border: solid 2vw rgba(200,200,200, 0.15);
+	}
+	#page > p { font-size:0.8rem; }
+	#pied > span { font-size: 0.8rem; }
+	#gradiant { margin:-15px 0 0; }
+}
+
+@media (max-width: 320px) and (min-width: 0px) {
+	#page { margin: 2rem 1rem 0; }
+	#tete-barre { height:2.5rem; }
+	#accueil-menu { left: 0.25rem; }
+	#propos-menu { right: 4rem; }
+	#autre-menu { right: 0.25rem; }
+	#tp-menu {
+		top: 85%;
+		font-size: 4vw;
+		border: solid 0.2rem rgba(200,200,200, 0.2);
+	}
+	.pages {
+		padding: 0.1rem;
+		font-size: 1rem;
+	}
+	#titre {
+		padding: 0.5rem;
+		border: solid 2vw rgba(200,200,200, 0.15);
+	}
+	#page > p { font-size:0.8rem; }
+	#pied > span { font-size: 0.8rem; }
+	#gradiant { margin:-15px 0 0; }
+}

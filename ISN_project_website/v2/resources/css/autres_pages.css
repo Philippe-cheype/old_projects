@@ -1,0 +1,226 @@
+::selection {
+	background-color: #000;
+	color: #fff;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #eee;
+	animation-fill-mode: forwards;
+	font-family: "Roboto", "Arial", sans-serif;
+}
+
+#entier {
+	position: relative;
+ 	min-height: 100%;
+}
+
+/* TETE DE PAGE */
+
+#tete {
+	background: rgba(52, 46, 46,1);
+	position: relative;
+	width:100%;
+	font-family: "Open Sans", sans-serif;
+	top: 0;
+	height:4rem;
+}
+
+.pages {
+	text-decoration: none;
+	padding: 0.4rem;
+	border: solid 0.3rem rgba(200,200,200, 0.05);
+    background: rgba(200,200,200,0.1);
+	top:50%;
+	transform: translate(0%, -50%);
+}
+
+#accueil-menu {
+	position: absolute;
+	color: #eee;
+	font-size: 1.5rem;
+	left: 1rem;
+}
+
+#propos-menu {
+	position: absolute;
+	color: #eee;
+	font-size: 1.5rem;
+	right: 110px;
+}
+
+#autre-menu {
+	position: absolute;
+	color: #eee;
+	font-size: 1.5rem;
+	right: 1rem;
+}
+
+#tp-menu {
+	position: absolute;
+	color: #eee;
+	font-size: 1.5rem;
+	right: 242px;
+}
+
+@keyframes boutons {
+	from 0% {
+		color: #eee;
+		border: solid 0.3rem rgba(200,200,200, 0.05);
+    	background: rgba(200,200,200,0.1);
+	}
+	to {
+		color: #aaa;
+		border: solid 0.3rem rgba(200,200,200, 0.1);
+    	background: rgba(200,200,200,0.15);
+	}
+}
+
+.pages:hover, #tp-menu:hover {
+	animation: boutons 0.4s;
+	animation-fill-mode: forwards;
+}
+
+/* PAGE */
+
+#page {
+	margin: 2rem 8rem 0;
+	text-align: justify;
+	overflow: auto;
+	height: 100%;
+	padding-bottom: 11rem;
+}
+
+#page > p {
+	font-size:1.1rem;
+}
+
+#tp {
+	text-align: center;
+}
+
+#tp > a {
+
+	font-family: "Open Sans", sans-serif;
+	text-decoration: underline;
+	color: black;
+	font-size: 2rem;
+}
+
+#tp > a::after {
+	display: block;
+	margin-bottom: 1rem;
+	content: "";
+}
+
+#tp > a:hover {
+	color: #666;
+}
+
+/* BAS DE PAGE */
+
+#pied {
+	position: absolute;
+	background: #1D1717;
+  	width:100%;
+  	height: 10rem;
+	margin-top: -10rem;
+	clear: both;
+	font-family: "Open Sans", sans-serif;
+}
+
+#pied > span {
+	position: absolute;
+	width: 100%;
+	color: #555;
+	font-size: 1.1rem;
+	text-align: center;
+}
+
+/* Compatibilité multi-platformes */
+
+@keyframes boutons-petit {
+	from 0% {
+		color: #eee;
+		border: solid 0.2rem rgba(200,200,200, 0.05);
+    	background: rgba(200,200,200,0.1);
+	}
+	to {
+		color: #aaa;
+		border: solid 0.2rem rgba(200,200,200, 0.1);
+    	background: rgba(200,200,200,0.15);
+	}
+}
+
+@keyframes boutons-tres-petit {
+	from 0% {
+		color: #eee;
+		border: solid 0.1rem rgba(200,200,200, 0.05);
+    	background: rgba(200,200,200,0.1);
+	}
+	to {
+		color: #aaa;
+		border: solid 0.1rem rgba(200,200,200, 0.1);
+    	background: rgba(200,200,200,0.15);
+	}
+}
+
+@media (max-width: 1000px) and (min-width: 621px) {
+	#page { margin: 2rem 4rem 0; }
+}
+
+@media (max-width: 620px) and (min-width: 415px) {
+	#page { margin: 2rem 4rem 0; }
+	#accueil-menu { left: 0.5rem; }
+	#propos-menu { right: 100px; }
+	#autre-menu { right: 0.5rem; }
+	#tp-menu { right: 231px; content: "TP"; }
+	.pages {
+		font-size: 1rem;
+		border: solid 0.2rem rgba(200,200,200, 0.05);
+	}
+	#tp > a { font-size: 1.5rem; }
+}
+
+@media (max-width: 414px) and (min-width: 335px) {
+	#page { margin: 2rem 2rem 0; }
+	#accueil-menu { left: 0.3rem; }
+	#propos-menu { right: 63px; }
+	#autre-menu { right: 0.3rem; }
+	#tp-menu { right: 139px; }
+	.pages {
+		font-size: 0.75rem;
+		border: solid 0.2rem rgba(200,200,200, 0.05);
+	}
+	.pages:hover, #tp-menu:hover {
+		animation: boutons-petit 0.4s;
+		animation-fill-mode: forwards;
+	}
+	#tp > a { font-size:1.25rem; }
+	#tp > a::after { margin-bottom: 0.75rem; }
+	#page > p { font-size:0.8rem; }
+	#pied > span { font-size: 0.8rem; }
+
+}
+
+@media (max-width: 334px) and (min-width: 0px) {
+	#page { margin: 2rem 1rem 0; }
+	#accueil-menu { left: 0.3rem; }
+	#propos-menu { right: 58px; }
+	#autre-menu { right: 0.3rem; }
+	#tp-menu { right: 129px; }
+	.pages {
+		font-size: 0.75rem;
+		border: solid 0.1rem rgba(200,200,200, 0.05);
+	}
+	.pages:hover, #tp-menu:hover {
+		animation: boutons-tres-petit 0.4s;
+		animation-fill-mode: forwards;
+	}
+	#tp > a { font-size:1.25rem; }
+	#tp > a::after { margin-bottom: 0.5rem; }
+	#page > p { font-size:0.8rem; }
+	#pied > span { font-size: 0.8rem; }
+}

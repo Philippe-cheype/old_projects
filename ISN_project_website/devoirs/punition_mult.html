@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		.titre {
+			display: block;
+			font-size: 2rem;
+			margin-bottom: 1rem;
+			text-decoration: underline;
+		}
+
+		#nom {
+			display: block;
+			font-size: 1.2rem;
+			margin-bottom: 0.1rem;
+			text-align: right;
+		}
+	</style>
+
+	<script>
+		function punition()
+		{
+			var punition_valeur = document.getElementById('punition').value;
+			i = 0;
+
+			document.getElementById('resultat_punition').innerHTML = "";
+			while (i < 100) {
+				document.getElementById('resultat_punition').innerHTML = document.getElementById('resultat_punition').innerHTML + punition_valeur + "<br/>";
+				i++;
+			}
+		}
+
+		function table()
+		{
+			var compte = 1;
+
+			document.getElementById('resultat_table').innerHTML = "";
+			document.getElementById('resultat_table').innerHTML = "// ";
+			while (compte <= 10) {
+				var nombre = document.getElementById('nombre').value;
+				if (isNaN(nombre) == true || nombre == "") {
+					document.getElementById('resultat_table').innerHTML = "Erreur";
+					break
+				}
+				nombre = nombre * compte
+				document.getElementById('resultat_table').innerHTML = document.getElementById('resultat_table').innerHTML + nombre + " // ";
+				compte++;
+			}
+		}
+	</script>
+</head>
+<body>
+	<span id="nom">Thomas ANTOINE // Philippe CHEYPE</span>
+
+	<span class="titre">Table de multiplication</span>
+	<input id="nombre"/>
+	<button onclick='table()'>Entrer</button>
+	<span id="resultat_table"></span>
+	<br><br><hr><br>
+
+	<span class="titre">punition (x100)</span>
+	<input id="punition"/>
+	<button onclick='punition()'>Entrer</button><br>
+	<span id="resultat_punition"></span>
+</body>
+</html>

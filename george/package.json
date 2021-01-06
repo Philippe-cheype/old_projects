@@ -1,0 +1,15 @@
+{
+  "name": "George",
+  "version": "1.0.0",
+  "description": "",
+  "main": "george.js",
+  "scripts": {
+    "start": "node george.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  }
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		html, body {
+			background: #fffcfa;
+			font-family: sans-serif;
+		}
+
+		hr { margin: 2rem 0; }
+
+		.titre-maitre {
+			font-weight: bold;
+			font-size: 2.5rem;
+			text-decoration: underline;
+			text-align: center;
+			color: #C20103;
+		}
+
+		.titre {
+			font-weight: bold;
+			font-size: 2rem;
+			text-align: center;
+			text-decoration: underline;
+			color: #C20103;
+		}
+
+		.tp-lien {
+			text-decoration: underline;
+			color: #222;
+			font-size: 1rem;
+			text-align: center;
+		}
+
+		.noms {  text-align: right;  }
+
+		div {  text-align:center;  }
+
+		.espace {  margin-top: 1rem;  }
+
+/* EXO 3 */
+		#rectangles {  background: #d03535;  }
+
+/* EXO 4 */
+		#spaceInv {  background: lightgray;  }
+
+	</style>
+	<script>
+		var t1 = [12,24,73,35,44,125,94,11,51,74];
+		var t2 = [0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,1,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,0,0,0,0,0,1,0,1,0,0,0,1,1,0,1,1,0,0,0];
+
+/* EXO 1 */
+		function afficher()
+		{
+			for (i = 0; i < t1.length; i++) {
+				console.log(t1[i]);
+			}
+		}
+
+		function nmbPairs()
+		{
+			for (i = 0; i < t1.length; i++) {
+				if (t1[i] % 2 == 0) {
+					console.log(t1[i]);
+				}
+			}
+		}
+
+/* EXO 2 */
+		function somme()
+		{
+			x = 0;
+			for (i = 0; i < t1.length; i++) {
+				x += t1[i];
+			}
+			document.getElementById('sommeNmb').innerHTML = x;
+		}
+
+		function plusGrand()
+		{
+			x = 0;
+			for (i = 0; i < t1.length; i++) {
+				if (t1[i] > x) {
+					x = t1[i];
+				}
+			}
+			document.getElementById('grandNmb').innerHTML = x;
+		}
+
+		function plusPetit()
+		{
+			x = t1[0];
+			for (i = 0; i < t1.length; i++) {
+				if (t1[i] < x) {
+					x = t1[i];
+				}
+			}
+			document.getElementById('petitNmb').innerHTML = x;
+		}
+
+/* EXO 3 */
+		function rectangles()
+		{
+			var n = 0; //n definie la position dans t1[]
+			var x = 0;
+			var y = 0;
+			var longueur = 75;
+			var couleur = "#E99191";
+
+			for (i = 0; i < t1.length; i++) {
+				var svg = document.getElementById('rectangles');
+				var rect = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
+				rect.setAttribute("x", x);
+				rect.setAttribute("y", y);
+				rect.setAttribute("width", longueur);
+				rect.setAttribute("height", t1[n]);
+				rect.setAttribute("fill", couleur);
+				svg.appendChild(rect);
+				x += 75;
+				n += 1;
+			}
+		}
+
+/* EXO 4 */
+	function spaceInv() {
+		var x = 0;
+		var y = 0;
+		var longueur = 40;
+		var hauteur = 40;
+		var fond = "black";
+		var invader = "white";
+
+		for (i = 1; i < t2.length +1; i++) {
+			i -= 1;
+			var svg = document.getElementById('spaceInv');
+			var rect = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
+
+			rect.setAttribute("x", x);
+			rect.setAttribute("y", y);
+			rect.setAttribute("width", longueur);
+			rect.setAttribute("height", hauteur);
+
+			if (t2[i] == 0) {
+				rect.setAttribute("fill", fond);
+			}
+			if (t2[i] == 1) {
+				rect.setAttribute("fill", invader);
+			}
+			svg.appendChild(rect);
+
+			x += 40;
+			if (x >= 440) {  y += 40;  x = 0;  }
+
+			i+=1;
+		}
+	}
+	</script>
+</head>
+
+<body>
+	<div>
+		<span class="titre-maitre">TP4 - Tableaux de nombres et images matricielles</span><br>
+
+		<a class="tp-lien" Href="TP4.pdf">Lien vers le sujet</a>
+
+		<div class="noms">
+			<span>MERLET Pauline</span><br>
+			<span>ANTOINE Thomas</span><br>
+			<span>CHEYPE Philippe</span>
+		</div>
+	</div>
+<!-- EXO 1 -->
+	<div>
+		<span class="titre">Exercice 1</span>
+		<div class="espace">
+			<span>t1 = [12,24,73,35,44,125,94,11,51,74]</span><br><br>
+			<span>! Dans console !</span><br><br>
+			<button onclick="afficher()">Afficher tout les nombres</button><br>
+			<button onclick="nmbPairs()">Afficher nombres pairs</button>
+		</div>
+	</div>
+<!-- EXO 2 --> <hr/>
+	<div>
+		<span class="titre">Exercice 2</span>
+		<div class="espace">
+			<button onclick="somme()">Somme des nombres</button>
+			<div id="sommeNmb"></div><br><br>
+
+			<button onclick="plusGrand()">Nombre le plus grand</button>
+			<div id="grandNmb"></div><br><br>
+
+			<button onclick="plusPetit()">Nombre le plus petit</button>
+			<div id="petitNmb"></div><br><br>
+
+		</div>
+	</div>
+<!-- EXO 3 --> <hr/>
+	<div>
+		<span class="titre">Exercice 3</span>
+		<div class="espace">
+			<button onclick="rectangles()">Rectangles</button><br><br>
+			<svg id="rectangles" width="750" height="150" viewBox="0 0 750 150">
+			</svg>
+		</div>
+	</div>
+<!-- EXO 4 --> <hr/>
+	<div>
+		<span class="titre">Exercice 4</span>
+		<div class="espace">
+			<span>t2 = [0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,1,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,0,0,0,0,0,1,0,1,0,0,0,1,1,0,1,1,0,0,0]</span><br><br>
+			<button onclick="spaceInv()">Space invaders</button><br><br>
+			<svg id="spaceInv" width="440" height="320" viewBox="0 0 440 320">
+			</svg><br><br><br>
+			<span style='font-size:2rem;font-color:red;'>Monsieur, si l'image du space invader n'est pas correcte veuillez prendre en compte le fait que la liste t2 présente sur votre TP donne bel et bien cette image. Il y a bien 87 nombres et non 88.</span>
+		</div>
+	</div>
+</body>
+</html>

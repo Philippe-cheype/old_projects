@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		html, body {
+			background: #fffcfa;
+			font-family: sans-serif;
+		}
+
+		hr { margin: 2rem 0; }
+
+		.titre-maitre {
+			font-weight: bold;
+			font-size: 2.5rem;
+			text-decoration: underline;
+			text-align: center;
+			color: #C20103;
+		}
+
+		.titre {
+			font-weight: bold;
+			font-size: 2rem;
+			text-align: center;
+			text-decoration: underline;
+			color: #C20103;
+		}
+
+		.tp-lien {
+			text-decoration: underline;
+			color: #222;
+			font-size: 1rem;
+			text-align: center;
+		}
+
+		.noms {
+			text-align: right;
+		}
+
+		div {
+			text-align:center;
+		}
+
+		.espace {
+			margin-top: 1rem;
+		}
+
+		button {
+			height: 2rem;
+		}
+/* EXO 1 */
+		#conteneur {
+			margin-top: 1rem;
+		}
+
+/* EXO 2 */
+		#vide {
+			margin-top: 1rem;
+		}
+
+		#fond {
+			background: red;
+			margin: 0 3rem;
+			padding: 0.5rem;
+		}
+
+		#coulTexte {
+			color: green;
+			padding: 1rem;
+			font-weight: bolder;
+		}
+
+		.coul1 {
+			background:blue;
+			color:yellow;
+		}
+
+		.coul2 {
+			background:red;
+			color:green;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<span class="titre-maitre">TP2 - Interactions avec javascript</span><br>
+
+		<a class="tp-lien" Href="TP2.pdf">Lien vers le sujet</a>
+
+		<div class="noms">
+			<span>ANTOINE Thomas</span><br>
+			<span>CHEYPE Philippe</span>
+		</div>
+	</div>
+<!-- EXO 1 -->
+	<div>
+		<span class="titre">Exercice 1 - Formulaire</span>
+		<div>
+			<br><span>Prénom</span><br>
+			<input type="text" id="nom"/>
+			<br><span>Date de naissance</span><br>
+			<input type="text" id="naissance"/>
+			<br>
+			<button onclick="conteneur.innerHTML = 'Bonjour '+nom.value+', vous êtes né en '+naissance.value+' donc vous avez '+(2019-naissance.value*1)+' ans en 2019.';">Valider</button>
+			<div id="conteneur"></div>
+		</div>
+	</div>
+<!-- EXO 2 --> <hr/>
+	<div>
+		<span class="titre">Exercice 2 - Couleurs</span>
+		<div class="espace">
+			<div id="fond">
+				<span id="coulTexte">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam explicabo iure dolorum expedita ea sed, voluptate fuga, aut minima eveniet voluptates praesentium provident earum dignissimos maiores quia accusamus iusto obcaecati, distinctio autem nam. Dignissimos nisi, voluptate aut saepe inventore provident aliquid quos suscipit pariatur neque doloribus placeat, soluta. Veritatis excepturi harum accusantium rerum exercitationem debitis molestias placeat, blanditiis, fugiat facilis dignissimos praesentium in natus, maxime id ducimus ratione nam dolores quaerat distinctio sit eum doloremque laborum. Ea voluptas maiores error amet laudantium molestiae, perspiciatis, hic labore rem perferendis officia saepe possimus ab reiciendis cupiditate, odio unde qui ipsum soluta suscipit!</span>
+				<br>
+			</div>
+		</div>
+		<button id="vide" class="coul1" onclick="document.getElementById('fond').style.background = 'blue';document.getElementById('coulTexte').style.color = 'yellow';">Jaune</button>
+		<button class="coul2" onclick="document.getElementById('fond').style.background = 'red';document.getElementById('coulTexte').style.color = 'green';">Vert</button>
+	</div>
+<!-- EXO 3 --> <hr/>
+	<div>
+		<span class="titre">Exercice 3 - Punition</span>
+		<div class="espace">
+			<button id="copier" onclick="document.getElementById('conteneurExo3').innerHTML = conteneurExo3.innerHTML + document.getElementById('zoneDeTexte').innerText + '<br>';">Copier</button>
+			<button id="effacer" onclick="document.getElementById('conteneurExo3').innerHTML = '';">Effacer</button>
+			<br>
+			<span id="zoneDeTexte">Je ne dois pas tirer la langue</span>
+			<br>
+			<span id="conteneurExo3"></span>
+		</div>
+	</div>
+<!-- EXO 4 --> <hr/>
+	<div>
+		<span class="titre">Exercice 4 - Dé avec bouton</span>
+		<div class="espace">
+			<img id="image" src="http://www.ac-grenoble.fr/ien.vienne1-2/spip/IMG/gif_de6.gif">
+			<br>
+			<button id="un" onclick="document.getElementById('image').src = 'http://www.ac-grenoble.fr/ien.vienne1-2/spip/IMG/gif_de1.gif';">1</button>
+			<button id="deux" onclick="document.getElementById('image').src = 'http://www.ac-grenoble.fr/ien.vienne1-2/spip/IMG/gif_de2.gif';">2</button>
+			<button id="trois" onclick="document.getElementById('image').src = 'http://www.ac-grenoble.fr/ien.vienne1-2/spip/IMG/gif_de3.gif';">3</button>
+			<button id="quatre" onclick="document.getElementById('image').src = 'http://www.ac-grenoble.fr/ien.vienne1-2/spip/IMG/gif_de4.gif';">4</button>
+			<button id="cinq" onclick="document.getElementById('image').src = 'http://www.ac-grenoble.fr/ien.vienne1-2/spip/IMG/gif_de5.gif';">5</button>
+			<button id="six" onclick="document.getElementById('image').src = 'http://www.ac-grenoble.fr/ien.vienne1-2/spip/IMG/gif_de6.gif';">6</button>
+		</div>
+	</div>
+<!-- EXO 4bis --> <hr/>
+	<div>
+		<span class="titre">Exercice 4bis - Dé avec range</span>
+		<div class="espace">
+			<img id="imageId" src="http://www.ac-grenoble.fr/ien.vienne1-2/spip/IMG/gif_de6.gif">
+			<br>
+			<input id="range" type="range" min="1" max="6" value="6" step="1" oninput="document.getElementById('imageId').src = 'http://www.ac-grenoble.fr/ien.vienne1-2/spip/IMG/gif_de' + document.getElementById('range').value + '.gif';">
+		</div>
+	</div>
+</body>
+</html>

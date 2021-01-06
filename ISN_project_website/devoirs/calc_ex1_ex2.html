@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		.titre {
+			display: block;
+			font-size: 2rem;
+			margin-bottom: 0.1rem;
+			text-decoration: underline;
+		}
+
+		#nom {
+			display: block;
+			font-size: 1.2rem;
+			margin-bottom: 0.1rem;
+			text-align: right;
+		}
+	</style>
+
+	<script>
+		function changer_couleur()
+		{
+			var c = saisie.value;
+
+			document.getElementById('erreur').innerHTML = '';
+			if (c == 'rouge') {
+				document.body.style.background='red';			// this was an actual exercice no AI or anything
+			} else if (c == 'vert') {							// just hardcoded colors :) yep... makes sense...
+				document.body.style.background='green';			// I cringe too while rereading this years later
+			} else if (c == 'bleu') {
+				document.body.style.background='blue';
+			} else if (c == 'rose') {
+				document.body.style.background='pink';
+			} else {
+				document.body.style.background = '';
+				document.getElementById('erreur').innerHTML = 'ERREUR!';
+			}
+
+			function carre()
+			{
+				document.getElementById('retour').innerHTML = fonctionCarre.value ** 2
+			};
+
+			function inverse()
+			{
+				document.getElementById('retour1').innerHTML = 1 / fonctionInverse.value;
+				if (fonctionInverse.value == 0)
+					document.getElementById('retour1').innerHTML = 'ERREUR!';
+			}
+		}
+	</script>
+</head>
+<body>
+    <span id="nom">Pauline MERLET // Thomas ANTOINE // Philippe CHEYPE</span>
+	<span class="titre">Exercice 1</span></br>
+	<span>Couleur de la page</span>
+	<input id="saisie"/>
+	<button onclick="changer_couleur();">Entrer</button>
+	<span id='erreur'></span>
+	<br><hr/>
+	<span class="titre">Exercice 2</span></br>
+	<span>Fonction inverse</span>
+	<input id="fonctionInverse"/>
+	<button onclick="inverse();">Entrer</button>
+	<span id="retour1"></span>
+	<br><br>
+	<span>Fonction carrée</span>
+	<input id="fonctionCarre"/>
+	<button onclick="carre();">Entrer</button>
+	<span id="retour"></span>
+	<hr/>
+
+	<span class="calculatrice titre">Calculatrice</span></br>
+	<input class="calculatrice" id="nombre1"/>
+	<input class="calculatrice" id="nombre2"/>
+	<button class="calculatrice" onclick="nb.innerHTML = nombre1.value*1+nombre2.value*1;">+</button>
+	<button class="calculatrice" onclick="nb.innerHTML = nombre1.value*1-nombre2.value*1;">-</button>
+	<button class="calculatrice" onclick="nb.innerHTML = (nombre1.value*1)/(nombre2.value*1);">/</button>
+	<button class="calculatrice" onclick="nb.innerHTML = (nombre1.value*1)*(nombre2.value*1);">×</button>
+	<div class="calculatrice" id="nb"></div>
+</body>

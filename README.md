@@ -6,7 +6,7 @@ These are projects I've worked on in the past, from 2015 - 2019.
 
 Some of these programs are not finished others don't work anymore because of incompatibility, but some projects are fully finishied.
 
-Remember my knowledge of some of these programming languages is very basic, I was just having fun with a hobby I had just discovered.
+Remember my knowledge of some of these programming languages was very basic, I was just having fun with a hobby I had just discovered.
 
 I'm now a student in computer science at Epitech. These projects are what led me here.
 
